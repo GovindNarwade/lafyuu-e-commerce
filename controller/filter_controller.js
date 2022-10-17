@@ -24,3 +24,20 @@ try {
     })
 }
 }
+exports.getProductbyProductCondition = async(req,res) =>{
+    try {
+        const  result = await product.find({ProductCondition:req.body.ProductCondition} )
+        res.json({
+            success:true,
+            message:"get Product by ProductCondition",
+            data : result
+        })
+        
+    } catch (error) {
+        res.json({
+            success:false,
+            message:"Something went Worng",
+            data : null
+        })
+    }
+    }

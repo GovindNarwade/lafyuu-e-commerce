@@ -1,5 +1,5 @@
 const express = require("express")
-const {getProductbyPriceRange} = require("../controller/filter_controller")
+const {getProductbyPriceRange,getProductbyProductCondition} = require("../controller/filter_controller")
 const router = express.Router()
 /**
  * @swagger
@@ -48,6 +48,46 @@ const router = express.Router()
  */
 router.route("/getProductbyPriceRange").post(getProductbyPriceRange)
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ProductCondition:
+ *       type: object
+ *       required:
+ *         - ProductCondition
+ *       properties:
+ *         ProductCondition:
+ *           type: string
+ *           description: ProductCondition
+ *       example:
+ *         ProductCondition: New
+ *        
+ *
+ */
+/**
+ * @swagger
+ * /api/v1/getProductbyProductCondition:
+ *   post:
+ *     summary: get Product by Product Condition
+ *     tags: [priceRange]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ProductCondition'
+ *     responses:
+ *       200:
+ *         description: get Product by ProductCondition successfull
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ProductCondition'
+ *       500:
+ *         description: Some server error
+ */
+ router.route("/getProductbyProductCondition").post(getProductbyProductCondition)
 
 module.exports = router
 
