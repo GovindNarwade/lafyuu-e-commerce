@@ -15,6 +15,7 @@ const review = require("./routes/Review_routes")
 const order = require("./routes/order_routes")
 const category = require("./routes/Category_routes")
 const shipping = require("./routes/shipping_routes")
+const address = require("./routes/Address_routes")
 db()
 app.use(express.json())
 app.use(express.static('public'));
@@ -53,6 +54,7 @@ app.use('/api/v1',review)
 app.use('/api/v1',order)
 app.use('/api/v1',category)
 app.use('/api/v1',shipping)
+app.use('/api/v1',address)
 
 app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT || 4000}`))
 
