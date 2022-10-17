@@ -22,7 +22,20 @@ const productSchema = mongoose.Schema({
     },
     ProductImage:{
         type:String
+    },
+    ProductCondition:{
+        type:String
+    },
+    BuyingFormat:{
+        type:String
+    },
+    Productlocation:{
+        type:String
+    },
+    ShowOnly:{
+        type:String
     }
+
 
 },{
 timestamps:true

@@ -7,7 +7,12 @@ try {
         ProductDescription:req.body.ProductDescription,
         ProductPrize:req.body.ProductPrize,
         ProductSize:req.body.ProductSize,
-        ProductImage:req.body.ProductImage
+        ProductImage:req.body.ProductImage,
+        ProductCondition:req.body.ProductCondition,
+        BuyingFormat:req.body.BuyingFormat,
+        Productlocation:req.body.Productlocation,
+        ShowOnly:req.body.ShowOnly,
+
     })
 res.json({
     success:true,
