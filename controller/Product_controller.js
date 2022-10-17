@@ -26,6 +26,7 @@ exports.GetAllProductDetails = async(req,res)=>{
     try {
         const result = await product.find()
     res.json({
+        count:result.length,
         success:true,
         message:"Get All Product Details",
         data:result,
