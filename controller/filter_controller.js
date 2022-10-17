@@ -41,3 +41,54 @@ exports.getProductbyProductCondition = async(req,res) =>{
         })
     }
     }
+    exports.getProductbyBuyingFormat = async(req,res) =>{
+        try {
+            const  result = await product.find({BuyingFormat:req.body.BuyingFormat} )
+            res.json({
+                success:true,
+                message:"get Product by Buying Format",
+                data : result
+            })
+            
+        } catch (error) {
+            res.json({
+                success:false,
+                message:"Something went Worng",
+                data : null
+            })
+        }
+        }
+        exports.getProductbyProductlocation = async(req,res) =>{
+            try {
+                const  result = await product.find({Productlocation:req.body.Productlocation} )
+                res.json({
+                    success:true,
+                    message:"get Product by Productlocation",
+                    data : result
+                })
+                
+            } catch (error) {
+                res.json({
+                    success:false,
+                    message:"Something went Worng",
+                    data : null
+                })
+            }
+            }
+            exports.getProductbyShowOnly = async(req,res) =>{
+                try {
+                    const  result = await product.find({ShowOnly:req.body.ShowOnly} )
+                    res.json({
+                        success:true,
+                        message:"get Product by ShowOnly",
+                        data : result
+                    })
+                    
+                } catch (error) {
+                    res.json({
+                        success:false,
+                        message:"Something went Worng",
+                        data : null
+                    })
+                }
+                }
